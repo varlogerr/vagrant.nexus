@@ -40,11 +40,10 @@ Vagrant.configure("2") do |config|
   # your network.
   # config.vm.network "public_network"
 
-  # Share an additional folder to the guest VM. The first argument is
-  # the path on the host to the actual folder. The second argument is
-  # the path on the guest to mount the folder. And the optional third
-  # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  # windows work around for https://github.com/ansible/ansible/issues/42388
+  config.vm.synced_folder "./provisioning/ansible",
+    "/provisioning/ansible",
+    mount_options: ["dmode=775", "fmode=664"] 
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -72,7 +71,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "./provisioning/scripts/ansible-install/ubuntu1804.sh"
   config.vm.provision "shell", path: "./provisioning/scripts/git-install/ubuntu1604.sh"
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
-    cd /vagrant/provisioning/ansible
+    cd /provisioning/ansible
     ansible-playbook playbook.yml
   SHELL
 end
