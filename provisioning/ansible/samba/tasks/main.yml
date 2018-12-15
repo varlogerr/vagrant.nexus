@@ -8,26 +8,24 @@
   - name: start samba
     service: name=smbd state=started enabled=yes
 
-  - name: create samba custom configuration
+  - name: create global conf
     template:
-      src: my_smbd.conf.j2
-      dest: /etc/samba/my_smbd.conf
+      src: smbd-global.conf.j2
+      dest: /etc/samba/smbd-global.conf
       owner: root
       group: root
       mode: 0644
 
-  - name: create share directory
-    file:
-      path: "{{ samba.share_dir }}"
-      state: directory
-      owner: "{{ samba.user }}"
-      group: "{{ samba.group }}"
-      mode: 0775
-
   - name: configure samba
     lineinfile:
       dest: /etc/samba/smb.conf
-      line: "include = /etc/samba/my_smbd.conf"
+      line: "include = /etc/samba/smbd-global.conf"
     notify: samba restart
+
+  - include_tasks: _create-share.yml
+    vars:
+      samba_share: "{{ item }}"
+      samba_conf_file: "/etc/samba/my-smbd-{{ item.name }}.conf"
+    with_items: "{{ samba.shares }}"
 
   become: true

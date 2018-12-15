@@ -1,0 +1,18 @@
+---
+- block:
+
+  - name: create samba custom configuration for {{ samba_share.name }}
+    template:
+      src: my-smbd.conf.j2
+      dest: "{{ samba_conf_file }}"
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: configure samba
+    lineinfile:
+      dest: /etc/samba/smb.conf
+      line: "include = {{ samba_conf_file }}"
+    notify: samba restart
+
+  become: true

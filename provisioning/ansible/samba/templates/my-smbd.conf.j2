@@ -1,0 +1,5 @@
+[{{ samba_share.name }}]
+    path = {{ samba_share.dir }}
+    guest ok = yes
+    force user = {{ samba_share.user }}
+    force group = {{ samba_share.group }}

@@ -1,5 +1,8 @@
 ---
 samba:
-  share_dir: /home/vagrant/Share
-  user: vagrant
-  group: vagrant
+  shares: []
+#   - name: Share # required
+#     dir: /home/vagrant/Share # required
+#     user: vagrant # required
+#     group: vagrant # required
+#     group: vagrant # required
