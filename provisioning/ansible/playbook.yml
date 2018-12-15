@@ -4,3 +4,4 @@
 - hosts: localhost
   roles:
   - role: docker
+  - role: nexus

@@ -1,0 +1,7 @@
+---
+dependencies:
+- docker
+- role: pip
+  pip:
+    modules:
+    - docker

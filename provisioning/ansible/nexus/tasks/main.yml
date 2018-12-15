@@ -1,0 +1,10 @@
+---
+- name: run nexus
+  docker_container:
+    name: nexus
+    image: sonatype/nexus3:3.14.0
+    state: started
+    restart_policy: unless-stopped
+    ports:
+    - "80:8081"
+    - "8082:8082"
