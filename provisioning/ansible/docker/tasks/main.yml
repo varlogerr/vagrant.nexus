@@ -19,6 +19,3 @@
     service: name=docker state=started enabled=yes
 
   become: true
-
-# https://download.docker.com/linux/debian/gpg
-# https://download.docker.com/linux/debian/gpg
