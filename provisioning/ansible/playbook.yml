@@ -1,0 +1,5 @@
+---
+# the content under unibook directory serves as demo,
+# but it still can provision a local vagrant environment
+- hosts: localhost
+  roles: []
