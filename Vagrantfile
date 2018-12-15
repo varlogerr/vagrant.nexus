@@ -71,7 +71,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: "apt-get update"
   config.vm.provision "shell", path: "./provisioning/scripts/ansible-install/ubuntu1804.sh"
   config.vm.provision "shell", path: "./provisioning/scripts/git-install/ubuntu1604.sh"
-  config.vm.provision "shell", inline: <<-SHELL
+  config.vm.provision "shell", privileged: false, inline: <<-SHELL
     cd /vagrant/provisioning/ansible
     ansible-playbook playbook.yml
   SHELL
