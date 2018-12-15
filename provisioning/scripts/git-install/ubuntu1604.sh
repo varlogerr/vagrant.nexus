@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
+# can be used for:
+# * ubuntu 16.04
+# * linux mint 18.*
+# * debian 9.*
 
 if which git >/dev/null; then
     echo "Upgrading git"
-    apt-get update
     apt-get --only-upgrade install -y git
     exit 0
 fi

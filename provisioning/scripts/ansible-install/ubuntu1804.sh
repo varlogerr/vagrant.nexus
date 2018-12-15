@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-# can be used with:
-# * ubuntu bionic
-# * linux mint tara
-
-apt-get update
+# can be used for:
+# * ubuntu 18.04
+# * linux mint 19.*
+# * debian 9.*
 
 if which ansible >/dev/null; then
     echo "Upgrading ansible"

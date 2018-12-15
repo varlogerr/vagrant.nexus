@@ -68,6 +68,7 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
+  config.vm.provision "shell", inline: "apt-get update"
   config.vm.provision "shell", path: "./provisioning/scripts/ansible-install/ubuntu1804.sh"
   config.vm.provision "shell", path: "./provisioning/scripts/git-install/ubuntu1604.sh"
 end
