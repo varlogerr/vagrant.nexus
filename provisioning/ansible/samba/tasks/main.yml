@@ -1,4 +1,5 @@
 ---
+# mount -o rw,guest,gid=1000,uid=1000,iocharset=utf8,file_mode=0664,dir_mode=0775 -t cifs //{ip}/Share /{directory}
 - block:
 
   - name: install samba
