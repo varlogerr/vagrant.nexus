@@ -5,3 +5,5 @@
   roles:
   - role: docker
   - role: nexus
+  - role: samba
+

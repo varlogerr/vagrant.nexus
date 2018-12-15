@@ -1,0 +1,5 @@
+---
+samba:
+  share_dir: /home/vagrant/Share
+  user: vagrant
+  group: vagrant
