@@ -1,12 +1,5 @@
 ---
-- block:
-
-  - name: install pip
-    apt: name=python-pip state=latest
-
-  - name: install modules
-    pip: name="{{ modules }}"
-    vars:
-      modules: "{{ pip.modules }}"
-
+- name: install modules
+  pip: name="{{ modules }}"
+  vars: { modules: "{{ pip.modules }}" }
   become: true
