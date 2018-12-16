@@ -5,8 +5,6 @@
     image: sonatype/nexus3:3.14.0
     state: started
     restart_policy: unless-stopped
-    ports:
-    - "80:8081"
-    - "8082:8082"
+    network_mode: host
   # work around for https://github.com/ansible/ansible/issues/20604
   become: true
