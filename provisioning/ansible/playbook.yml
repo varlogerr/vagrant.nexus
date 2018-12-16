@@ -1,12 +1,4 @@
 ---
 - hosts: localhost
   roles:
-  - role: docker
   - role: nexus
-  - role: samba
-    samba:
-      shares:
-      - name: Share
-        dir: /home/vagrant/Share
-        user: vagrant
-        group: vagrant
