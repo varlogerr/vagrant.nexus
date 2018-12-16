@@ -1,4 +1,7 @@
 ---
 dependencies:
-- apt-utils
-- curl
+- role: apt-utils
+- role: toolbox
+  toolbox:
+    tools:
+    - curl
