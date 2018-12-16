@@ -1,7 +1,4 @@
 ---
-- block:
-
-  - name: install curl
-    apt: name=curl state=present
-  
+- name: install curl
+  apt: name=curl state=present
   become: true

@@ -1,13 +1,10 @@
 ---
-- block:
-
-  - name: install apt utils
-    apt: name="{{ packages }}" state=present
-    vars:
+- name: install apt utils
+  apt: name="{{ packages }}" state=present
+  vars:
       packages:
       - apt-transport-https
       - ca-certificates
       - gnupg2
       - software-properties-common
-  
   become: true
