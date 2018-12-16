@@ -1,6 +1,6 @@
 ---
 dependencies:
-- docker
+- role: docker
 - role: pip
   pip:
     modules:

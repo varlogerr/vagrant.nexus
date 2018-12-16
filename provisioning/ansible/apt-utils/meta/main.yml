@@ -1,0 +1,9 @@
+---
+dependencies:
+- role: toolbox
+  toolbox:
+    tools:
+    - apt-transport-https
+    - ca-certificates
+    - gnupg2
+    - software-properties-common
