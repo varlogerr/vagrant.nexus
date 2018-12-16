@@ -1,0 +1,4 @@
+---
+- name: install toolbox
+  apt: name="{{ toolbox.tools }}" state=latest
+  become: true
